@@ -1,0 +1,39 @@
+import pandas as pd
+import numpy as np
+data_dict = {
+    'Name': ['Tiger', 'Elephant', 'Cheetah', 'Kangaroo', 'Panda'],
+    'Height (cm)': [90, 300, 75, 160, 70],
+    'Weight (kg)': [220, 5400, 60, 85, 100],
+    'Color': ['Orange', 'Grey', 'Spotted', 'Brown', 'White'],
+    'Lifespan (years)': [20, 70, 12, 25, 20],
+    'Diet': ['Carnivore', 'Herbivore', 'Carnivore', 'Herbivore', 'Herbivore'],
+    'Habitat': ['Forest', 'Grassland', 'Savannah', 'Desert', 'Forest'],
+    'Predators': [None, 'None', 'Lion', 'None', 'None'],
+    'Average Speed (km/h)': [49, 25, 93, 56, 20],
+    'Countries Found': ['Asia', 'Africa', 'Africa', 'Australia', 'Asia'],
+    'Conservation Status': ['Endangered', 'Vulnerable', 'Vulnerable', 'Least Concern', 'Endangered'],
+    'Family': ['Felidae', 'Elephantidae', 'Felidae', 'Macropodidae', 'Ailuropodidae'],
+    'Gestation Period (days)': [105, 660, 93, 33, 135],
+    'Top Speed (km/h)': [65, 25, 120, 71, 25],
+    'Social Structure': ['Solitary', 'Herd', 'Solitary', 'Mob', 'Solitary'],
+    'Offspring per Birth': [3, 1, 4, 1, 1]
+}
+data = pd.DataFrame(data_dict)
+import matplotlib.pyplot as plt
+import seaborn as sns
+eda_data = data
+
+eda_data.head()
+overview = {
+    "Shape": eda_data.shape,
+    "Info": eda_data.info(),
+    "Missing Values": eda_data.isnull().sum(),
+    "Summary": eda_data.describe()
+}
+overview
+numerical_cols = ['Height (cm)', 'Weight (kg)', 'Lifespan (years)', 'Average Speed (km/h)', 
+                  'Gestation Period (days)', 'Top Speed (km/h)', 'Offspring per Birth']
+
+eda_data[numerical_cols].hist(figsize=(12, 10), bins=10, edgecolor='black')
+plt.suptitle("Histograms of Numerical Features", fontsize=16)
+plt.show()
