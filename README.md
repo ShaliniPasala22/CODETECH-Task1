@@ -1,8 +1,8 @@
 # CODETECH-TASK-1
 
-- *Name*: Rohit Venkata Sai
+- *Name*: Pasala Mariya Shalini
 - *Company*: CODETECH IT SOLUTIONS
-- *ID*:CT6WDVD
+- *ID*:CT6WDUM
 - *Domain*: Data Scientist
 - *Duration*: December to February
 
